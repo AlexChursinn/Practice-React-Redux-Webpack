@@ -1,0 +1,57 @@
+.search {
+  display: flex;
+  margin: 10px 0;
+
+  &-input {
+    padding: 5px;
+    width: 100%;
+  }
+
+  &-btn {
+    padding: 5px;
+  }
+}
+
+.fetching {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 30vh auto;
+  border: 2px dashed red;
+  /* Чтобы анимация работала надо укзаать её имя и длительность */
+  animation-name: search-fetching;
+  animation-duration: 0.5s;
+  /* Чтобы анимация не заканчивалась */
+  animation-iteration-count: infinite;
+  /* Чтобы анимация была туда обратно */
+  animation-direction: alternate;
+  /* Чтобы скорость анимации во всех промежутках была одинакова */
+  animation-timing-function: linear;
+}
+
+/* Устанавливаем значение анимации с 0 до 360 за 1 секунду */
+@keyframes search-fetching {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.3);
+  }
+}
+
+.pages {
+  margin: 20px 0;
+
+  .page,
+  .current-page {
+    border: 1px solid lightgrey;
+    border-radius: 100%;
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .current-page {
+    border: 2px solid gray;
+    font-weight: 700;
+  }
+}
